@@ -331,7 +331,14 @@ hr {
   .tile.tile-2 .tile-inner {
 /*    background-image: "../meta/apple-touch-icon.png";
     color: 'red'*/
+    /*matias*/
+    /*color: #f9f6f2;*/
     background: #eee4da;
+
+    /*color: #f9f6f2;*/
+    /*background: #00ffff;*/
+    /*background: #00cccc;*/
+    
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
     font-size: 15px;
     }
@@ -339,7 +346,11 @@ hr {
       .tile.tile-2 .tile-inner {
         font-size: 9px; } }
   .tile.tile-4 .tile-inner {
+    /*matias*/
     background: #ede0c8;
+    /*background: #3c3a32;*/
+
+    /*background: #00a5a5;*/
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
     font-size: 30px;
     }
@@ -347,72 +358,92 @@ hr {
       .tile.tile-4 .tile-inner {
         font-size: 18px; } }
   .tile.tile-8 .tile-inner {
+    /*tomas*/
     color: #f9f6f2;
     background: #f2b179;
+
+    /*color: #f9f6f2;*/
+    /*background: #0000ff;*/
     font-size: 15px;
     }
     @media screen and (max-width: 520px) {
       .tile.tile-8 .tile-inner {
         font-size: 9px; } }
   .tile.tile-16 .tile-inner {
-    color: #f9f6f2;
+    /*tomas*/
+    /*color: #f9f6f2;*/
     background: #f59563;
+    /*background: #0000aa;*/
+    
     font-size: 30px;
     }
     @media screen and (max-width: 520px) {
       .tile.tile-16 .tile-inner {
         font-size: 18px; } }
   .tile.tile-32 .tile-inner {
+    /*beatriz*/
     color: #f9f6f2;
     background: #f67c5f;
+    /*background: #ff0000;*/
     font-size: 15px;
     }
     @media screen and (max-width: 520px) {
       .tile.tile-32 .tile-inner {
         font-size: 9px; } }
   .tile.tile-64 .tile-inner {
-    color: #f9f6f2;
+    /*beatriz*/
+    /*color: #f9f6f2;*/
     background: #f65e3b;
+    /*background: #aa0000;*/
     font-size: 30px;
     }
     @media screen and (max-width: 520px) {
       .tile.tile-64 .tile-inner {
         font-size: 18px; } }
   .tile.tile-128 .tile-inner {
+    /*martin*/
     color: #f9f6f2;
     background: #edcf72;
+    /*background: #ccbbaa;*/
+    
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
     font-size: 15px; }
     @media screen and (max-width: 520px) {
       .tile.tile-128 .tile-inner {
         font-size: 9px; } }
   .tile.tile-256 .tile-inner {
+    /*martin*/
     color: #f9f6f2;
     background: #edcc61;
+    /*background: #aa9988;*/
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-256 .tile-inner {
         font-size: 18px; } }
   .tile.tile-512 .tile-inner {
+    /*vicente*/
     color: #f9f6f2;
-    background: #edc850;
+    background: #0000ff;
+    
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
     font-size: 15px; }
     @media screen and (max-width: 520px) {
       .tile.tile-512 .tile-inner {
         font-size: 9px; } }
   .tile.tile-1024 .tile-inner {
-    color: #f9f6f2;
-    background: #edc53f;
+    /*vicente*/
+    /*color: #f9f6f2;*/
+    background: #0000aa;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-1024 .tile-inner {
         font-size: 18px; } }
   .tile.tile-2048 .tile-inner {
+    /*jorge*/
     color: #f9f6f2;
-    background: #edc22e;
+    background: #00cccc;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
     font-size: 30px; }
     @media screen and (max-width: 520px) {
@@ -424,7 +455,7 @@ hr {
     font-size: 10px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
-        font-size: 18px; } }
+        font-size: 6px; } }
 
 @-webkit-keyframes appear {
   0% {
