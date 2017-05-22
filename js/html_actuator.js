@@ -60,14 +60,15 @@ HTMLActuator.prototype.addTile = function (tile) {
     4: 'Matías', // Right
     8: 'Tomás', // Down
     16: 'Tomás', // Left
-    32: 'Beatriz', // Vim up
-    64: 'Beatriz', // Vim right
+    32: 'Bea', // Vim up
+    64: 'Bea', // Vim right
     128: 'Martín', // Vim down
     256: 'Martín', // Vim left
     512: 'Vicente', // W
     1024: 'Vicente', // D
     2048: 'JORGE', // S
-    4096: 'pico pal que lee'
+    4096: 'Estudia mejor',
+    8192: '1° en llegar hasta acá!'
   };
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
