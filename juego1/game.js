@@ -33,11 +33,7 @@ var myGameArea = {
 
 }
 
-var canvas_elem = document.getElementById("canvas");
-document.getElementById("prueba").innerHTML = canvas_elem.id;
 
-canvas_elem.addEventListener('touchend', accelerate(-0.18), false);
-canvas_elem.addEventListener('touchstart', accelerate(0.08), false);
 
 function startGame() {
     width = myGameArea.canvas.width;
