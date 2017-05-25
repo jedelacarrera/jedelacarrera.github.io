@@ -13,6 +13,31 @@ var map_speed = {
     6: 2
 };
 
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        // this.canvas.width = 480; //100%; //480;
+        // this.canvas.height = 270; //50%; //270;
+        this.canvas.id = "canvas";
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    stop : function() {
+        myObstacles = [];
+        myGameArea.frameNo = 0;
+    }
+
+}
+
+var canvas_elem = document.getElementById("canvas");
+document.getElementById("prueba").innerHTML = canvas_elem.id;
+
+canvas_elem.addEventListener('touchend', accelerate(-0.18), false);
+canvas_elem.addEventListener('touchstart', accelerate(0.08), false);
 
 function startGame() {
     width = myGameArea.canvas.width;
@@ -22,7 +47,10 @@ function startGame() {
     document.getElementById("iniciar").hidden = false;
     document.getElementById("reiniciar").hidden = true;
     myGameArea.start();
-    
+    var canvas_elem = document.getElementById("canvas");
+
+    canvas_elem.addEventListener('touchend', accelerate(-0.18), false);
+    canvas_elem.addEventListener('touchstart', accelerate(0.08), false);
 }
 
 function iniciar() {
@@ -40,25 +68,6 @@ function restartGame() {
     myGameArea.clear();
     myGameArea.stop();
    
-}
-
-var myGameArea = {
-    canvas : document.createElement("canvas"),
-    start : function() {
-        // this.canvas.width = 480; //100%; //480;
-        // this.canvas.height = 270; //50%; //270;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.frameNo = 0;
-        },
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    },
-    stop : function() {
-		myObstacles = [];
-        myGameArea.frameNo = 0;
-    }
-
 }
 
 function component(width, height, color, x, y, type) {

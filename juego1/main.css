@@ -1,12 +1,22 @@
 canvas {
 	padding: 0%;
 	/*padding-right: 15%;*/
-	width: 100%;
+	width: 480px;
     border:1px solid #d3d3d3;
     background-color: #f1f1f1;
 	}
+	@media screen and (max-width: 520px) {
+      canvas {
+        width: 100%; 
+    	} 
+    }
 
 .button-subir {
-	width: 90%;
+	width: 480px;
 	align-content: center;
-}
+	}
+	@media screen and (max-width: 520px) {
+      .button-subir {
+        width: 100%; 
+    	} 
+    }
