@@ -14,6 +14,8 @@ var map_speed = {
     6: 2
 };
 
+var debug = false;
+
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
@@ -23,8 +25,8 @@ var myGameArea = {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
-        this.canvas.addEventListener("touchstart", handleStart, false);
-        this.canvas.addEventListener("touchend", handleEnd, false);
+        // this.canvas.addEventListener("touchstart", handleStart, false);
+        // this.canvas.addEventListener("touchend", handleEnd, false);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -47,7 +49,6 @@ function startGame() {
     document.getElementById("reiniciar").hidden = true;
     myGameArea.start();
     var canvas_elem = document.getElementById("canvas");
-
     canvas_elem.addEventListener('touchstart', handleStart, false);
     canvas_elem.addEventListener('touchend', handleEnd, false);
 }
@@ -56,6 +57,7 @@ function iniciar() {
     document.getElementById("iniciar").hidden = true;
     document.getElementById("reiniciar").hidden = false;
     myGameArea.interval = setInterval(updateGameArea, map_speed[document.getElementById("level").value]);
+    started = true;
 }
 
 function restartGame() {
@@ -161,6 +163,7 @@ function everyinterval(n) {
 
 function accelerate(n) {
     myGamePiece.gravity = n;
+    log2('accelerate' + String(n))
     // document.getElementById("prueba").innerHTML = n;
     // for (i = 0); 
     // myObstacles[0].gravitySpeed = myObstacles[0].gravitySpeed + 10;
@@ -193,7 +196,7 @@ function handleStart(evt) {
     evt.preventDefault();
     log("touch start")
     if (started) {
-        accelerate(0.08);
+        accelerate(-0.18);
     } else {
         log2("No iniciado todavia");
     }
@@ -203,17 +206,21 @@ function handleEnd(evt) {
     evt.preventDefault();
     log("touch end")
     if (started) {
-        accelerate(-0.18);
+        accelerate(0.08);
     } else {
         log2("No iniciado todavia end")
     }
 }
 
 function log(string) {
-    document.getElementById("log").innerHTML = string
+    if (debug){
+        document.getElementById("log").innerHTML = string;
+    }
 }
 
     
 function log2(string) {
-    document.getElementById("log2").innerHTML = string
+    if (debug) {
+        document.getElementById("log2").innerHTML = string;
+    }
 }
