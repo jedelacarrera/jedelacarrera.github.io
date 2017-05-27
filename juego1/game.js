@@ -124,7 +124,10 @@ function component(width, height, color, x, y, type) {
 }
 
 function updateGameArea() {
-    document.getElementById("prueba").innerHTML = width;
+    if (debug){
+        document.getElementById("prueba").innerHTML = width;
+    }
+    
     var x, height, gap, minHeight, maxHeight, minGap, maxGap, velocity;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
