@@ -3,6 +3,7 @@ var myGamePiece;
 var myObstacles = [];
 var myScore;
 var width;
+var started = false;
 
 var map_speed = {
     1: 20,
@@ -22,6 +23,8 @@ var myGameArea = {
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
+        this.canvas.addEventListener("touchstart", handleStart, false);
+        this.canvas.addEventListener("touchend", handleEnd, false);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -45,8 +48,8 @@ function startGame() {
     myGameArea.start();
     var canvas_elem = document.getElementById("canvas");
 
-    canvas_elem.addEventListener('touchend', accelerate(-0.18), false);
-    canvas_elem.addEventListener('touchstart', accelerate(0.08), false);
+    canvas_elem.addEventListener('touchstart', handleStart, false);
+    canvas_elem.addEventListener('touchend', handleEnd, false);
 }
 
 function iniciar() {
@@ -171,3 +174,46 @@ function accelerate(n) {
     // document.getElementById("prueba2").innerHTML = myGameArea.frameNo+10;
 }
 
+// function KeyboardInputManager() {
+//   this.events = {};
+
+//   if (window.navigator.msPointerEnabled) {
+//     //Internet Explorer 10 style
+//     this.eventTouchstart    = "MSPointerDown";
+//     this.eventTouchend      = "MSPointerUp";
+//   } else {
+//     this.eventTouchstart    = "touchstart";
+//     this.eventTouchend      = "touchend";
+//   }
+
+//   this.listen();
+// }
+
+function handleStart(evt) {
+    evt.preventDefault();
+    log("touch start")
+    if (started) {
+        accelerate(0.08);
+    } else {
+        log2("No iniciado todavia");
+    }
+}
+
+function handleEnd(evt) {
+    evt.preventDefault();
+    log("touch end")
+    if (started) {
+        accelerate(-0.18);
+    } else {
+        log2("No iniciado todavia end")
+    }
+}
+
+function log(string) {
+    document.getElementById("log").innerHTML = string
+}
+
+    
+function log2(string) {
+    document.getElementById("log2").innerHTML = string
+}

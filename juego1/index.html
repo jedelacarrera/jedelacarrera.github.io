@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
-<body onload="startGame();" onkeypress="accelerate(-0.18);" onkeyup="accelerate(0.08);">
+<body onload="startGame();" onkeypress="accelerate(-0.18);" onkeyup="accelerate(0.08);" wqeqew="accelerate(-0.18);" ontouchend="accelerate(0.08);">
  <!-- onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)" -->
 <br>
 
@@ -17,7 +17,8 @@
     <p>Selecciona el nivel de dificultad</p>
     <input id="level" type="number" name="quantity" min="1" max="4" value="1">
     <p id="prueba"></p>
-    <!-- <p id="prueba2">HOLA</p> -->
+    <p id="log">NADA</p>
+    <p id="log2">NADA</p>
 
     <script src="game.js"></script>
 </body>
