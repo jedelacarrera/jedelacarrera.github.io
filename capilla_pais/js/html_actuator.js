@@ -50,17 +50,17 @@ HTMLActuator.prototype.addTile = function (tile) {
   var self = this;
 
   var wrapper   = document.createElement("div");
-  var inner     = document.createElement("div");
+  var inner     = document.createElement("img");
   var position  = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
 
   // We can't use classlist because it somehow glitches when replacing classes
   var map = {
-    2: 'Matías', // Up
-    4: 'Matías', // Right
-    8: 'Tomás', // Down
-    16: 'Tomás', // Left
-    32: 'Bea', // Vim up
+    2: 'img/2.png', // Up
+    4: 'img/4.png', // Right
+    8: 'img/8.png', // Down
+    16: 'img/16.png', // Left
+    32: 'img/32.png', // Vim up
     64: 'Bea', // Vim right
     128: 'Martín', // Vim down
     256: 'Martín', // Vim left
@@ -78,6 +78,7 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   inner.classList.add("tile-inner");
   inner.textContent = map[tile.value];
+  inner.setAttribute("src", map[tile.value])
   // inner.backgroundImage = "../meta/apple-touch-icon.png";
 
   if (tile.previousPosition) {
