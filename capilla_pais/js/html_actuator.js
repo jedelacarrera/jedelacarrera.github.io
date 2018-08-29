@@ -56,19 +56,19 @@ HTMLActuator.prototype.addTile = function (tile) {
 
   // We can't use classlist because it somehow glitches when replacing classes
   var map = {
-    2: 'img/2.png', // Up
-    4: 'img/4.png', // Right
-    8: 'img/8.png', // Down
-    16: 'img/16.png', // Left
-    32: 'img/32.png', // Vim up
-    64: 'Bea', // Vim right
-    128: 'Martín', // Vim down
-    256: 'Martín', // Vim left
-    512: 'Vicente', // W
-    1024: 'Vicente', // D
-    2048: 'JORGE', // S
-    4096: 'Estudia mejor',
-    8192: '1° en llegar hasta acá!'
+    2: 'img/2.png',
+    4: 'img/4.png',
+    8: 'img/8.png',
+    16: 'img/16.png',
+    32: 'img/32.png',
+    64: 'img/64.png',
+    128: 'img/128.png',
+    256: 'img/256.png',
+    512: 'img/512.png',
+    1024: 'img/1024.png',
+    2048: 'img/2048.png',
+    4096: 'img/4096.png',
+    8192: 'img/8192.png',
   };
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
