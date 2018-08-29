@@ -77,8 +77,9 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = map[tile.value];
-  inner.setAttribute("src", map[tile.value])
+  // inner.textContent = map[tile.value];
+  inner.setAttribute("src", map[tile.value]);
+  inner.backgroundColor = "white";
   // inner.backgroundImage = "../meta/apple-touch-icon.png";
 
   if (tile.previousPosition) {
