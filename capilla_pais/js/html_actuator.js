@@ -69,6 +69,7 @@ HTMLActuator.prototype.addTile = function (tile) {
     2048: 'img/2048.png',
     4096: 'img/4096.png',
     8192: 'img/8192.png',
+    16384: 'img/16384.png',
   };
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
