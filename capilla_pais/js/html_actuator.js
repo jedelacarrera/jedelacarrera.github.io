@@ -65,7 +65,7 @@ HTMLActuator.prototype.addTile = function (tile) {
     128: 'img/128.png',
     256: 'img/256.png',
     512: 'img/512.png',
-    1024: 'img/1024.gif',
+    1024: 'img/1024.png',
     2048: 'img/2048.png',
     4096: 'img/4096.png',
     8192: 'img/8192.png',
