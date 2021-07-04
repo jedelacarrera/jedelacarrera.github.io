@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Countdown</title>
-	<meta charset="utf-8">
-	<style> 
-		p { 
-		  text-align: center; 
-		  font-size: 40px;
-		}
-	</style>
-</head>
-<body>
-	<div id="container">
-		<p id="days"></p>
-		<p id="hours"></p>
-		<p id="minutes"></p>
-		<p id="seconds"></p>
-	</div>
-	<p>
-		<img src="img/image.png" id="image" style="width: 200px; opacity: 0;">
-	</p>
-	<script type="text/javascript">
-		const intialDiff = 1000*60*60*21;
-		// '2019–10–25T19:35:00' + 7 hrs
-		const deadline = new Date('Oct 26, 2019 02:35:00 GMT');
-		console.log(deadline);
-		const x = setInterval(function() {
-			const now = new Date();
-			const t = deadline - now;
-			const days = Math.floor(t / (1000 * 60 * 60 * 24));
-			const hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
-			const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-			const seconds = Math.floor((t % (1000 * 60)) / 100)/10;
-			document.getElementById("days").innerHTML = days + " días";
-			document.getElementById("hours").innerHTML = hours + " horas";
-			document.getElementById("minutes").innerHTML = minutes + " minutos";
-			document.getElementById("seconds").innerHTML = seconds + " segundos";
-			document.getElementById("image").style.opacity = 1 - t/intialDiff;
-			if (t < 0 ) {
-				clearInterval(x);
-				document.getElementById("container").innerHTML = "<p>Por fin!!!!!!!!!!!</p>";
-			}
-			if (isNaN(deadline)) {
-				clearInterval(x);
-			}
-		}, 100);
-
-	</script>
-</body>
+  <head>
+    <title>Countdown</title>
+    <meta charset="utf-8" />
+    <style>
+      p {
+        text-align: center;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="days"></p>
+      <p id="hours"></p>
+      <p id="minutes"></p>
+      <p id="seconds"></p>
+    </div>
+    <p>
+      <img src="img/image.png" id="image" style="width: 200px; opacity: 0" />
+    </p>
+    <script type="text/javascript">
+      const intialDiff = 1000 * 60 * 60 * 24 * 6.2;
+      // '2021–07–10T12:00:00' + 7 hrs
+      const deadline = new Date("Jul 10, 2021 19:00:00 GMT");
+      console.log(deadline);
+      const x = setInterval(function () {
+        const now = new Date();
+        const t = deadline - now;
+        const days = Math.floor(t / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((t % (1000 * 60)) / 100) / 10;
+        seconds = seconds.toString();
+        if (seconds.length === 1) {
+          seconds = "0" + seconds + ".0";
+        } else if (seconds.length === 2) {
+          seconds = seconds + ".0";
+        } else if (seconds.length === 3) {
+          seconds = "0" + seconds;
+        }
+        document.getElementById("days").innerHTML = days + " días";
+        document.getElementById("hours").innerHTML = hours + " horas";
+        document.getElementById("minutes").innerHTML = minutes + " minutos";
+        document.getElementById("seconds").innerHTML = seconds + " segundos";
+        document.getElementById("image").style.opacity = 1 - t / intialDiff;
+        if (t < 0) {
+          clearInterval(x);
+          document.getElementById("container").innerHTML =
+            "<p>Por fin!!!!!!!!!!!</p>";
+        }
+        if (isNaN(deadline)) {
+          clearInterval(x);
+        }
+      }, 100);
+    </script>
+  </body>
 </html>
